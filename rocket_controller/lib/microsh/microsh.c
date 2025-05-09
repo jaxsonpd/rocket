@@ -45,14 +45,14 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>
-#include "include/microsh.h"
+#include "microsh.h"
 
 #if MICROSH_CFG_CONSOLE_SESSIONS
-static int     prv_execute_login(microrl_t* mrl, int argc, const char* const* argv);
-static void    prv_clean_array(void* arr, size_t n);
+static int     prv_execute_login(microrl_t* mrl, int argc, const char* const *argv);
+static void    prv_clean_array(void *arr, size_t n);
 #endif /* MICROSH_CFG_CONSOLE_SESSIONS */
 
-static int     prv_execute(microrl_t* mrl, int argc, const char* const* argv);
+static int     prv_execute(microrl_t* mrl, int argc, const char* const *argv);
 
 /**
  * \brief           Init and prepare Shell stack for operation
@@ -87,9 +87,9 @@ microshr_t microsh_init(microsh_t* msh, microrl_output_fn out_fn) {
  * \return          \ref microshOK on success, member of \ref microshr_t otherwise
  */
 microshr_t microsh_cmd_register(microsh_t* msh, size_t arg_num, const char* cmd_name,
-    microsh_cmd_fn cmd_fn, const char* desc) {
+                                    microsh_cmd_fn cmd_fn, const char* desc) {
     if (msh == NULL || arg_num == 0 || cmd_name == NULL ||
-        cmd_fn == NULL || strlen(cmd_name) == 0) {
+            cmd_fn == NULL || strlen(cmd_name) == 0) {
         return microshERRPAR;
     }
 
@@ -133,7 +133,7 @@ microshr_t microsh_cmd_unregister_all(microsh_t* msh) {
  */
 microsh_cmd_t* microsh_cmd_find(microsh_t* msh, const char* cmd_name) {
     if (msh == NULL || cmd_name == NULL || strlen(cmd_name) == 0 ||
-        msh->cmds_index == 0) {
+            msh->cmds_index == 0) {
         return NULL;
     }
 
@@ -159,7 +159,7 @@ microsh_cmd_t* microsh_cmd_find(microsh_t* msh, const char* cmd_name) {
  * \return          \ref microshOK on success, member of \ref microshr_t otherwise
  */
 microshr_t microsh_session_init(microsh_t* msh, const microsh_credentials_t* cred, size_t cred_num,
-    microsh_logged_in_fn logged_in_cb) {
+                                    microsh_logged_in_fn logged_in_cb) {
     if (msh == NULL || cred == NULL || cred_num > MICROSH_CFG_MAX_CREDENTIALS) {
         return microshERRPAR;
     }
@@ -224,7 +224,7 @@ microshr_t microsh_session_logout(microsh_t* msh) {
  * \return          \ref microshEXEC_OK on success, member of
  *                      \ref microsh_execr_t enumeration otherwise
  */
-static int prv_execute_login(microrl_t* mrl, int argc, const char* const* argv) {
+static int prv_execute_login(microrl_t* mrl, int argc, const char* const *argv) {
     microsh_t* msh = (microsh_t*)mrl;
 
     /* Check for empty command buffer */
@@ -259,9 +259,9 @@ static int prv_execute_login(microrl_t* mrl, int argc, const char* const* argv) 
         } else if (msh->session.status.flags.passw_wait) {
             size_t j;
             for (j = 0; j < MICROSH_ARRAYSIZE(msh->session.credentials); ++j) {
-                if (msh->session.status.login_type == msh->session.credentials[j].login_type) {
-                    break;
-                }
+               if (msh->session.status.login_type == msh->session.credentials[j].login_type) {
+                   break;
+               }
             }
 
             if (strcmp(argv[i], msh->session.credentials[j].password) == 0) {
@@ -312,7 +312,8 @@ static int prv_execute_login(microrl_t* mrl, int argc, const char* const* argv) 
  * \param[out]      arr: Array with data to clear
  * \param[in]       n: Array length
  */
-static void prv_clean_array(void* arr, size_t n) {
+static void prv_clean_array(void *arr, size_t n)
+{
     uint8_t* p = (uint8_t*)arr;
     while (n--) {
         *p++ = 0x00;
@@ -328,7 +329,7 @@ static void prv_clean_array(void* arr, size_t n) {
  * \return          \ref microshEXEC_OK on success, member of
  *                      \ref microsh_execr_t enumeration otherwise
  */
-static int prv_execute(microrl_t* mrl, int argc, const char* const* argv) {
+static int prv_execute(microrl_t* mrl, int argc, const char* const *argv) {
     microsh_cmd_t* cmd = NULL;
     microsh_t* msh = (microsh_t*)mrl;
 
@@ -378,7 +379,7 @@ static int prv_execute(microrl_t* mrl, int argc, const char* const* argv) {
  * \param[in]       argc: Number of arguments in command line
  * \param[in]       argv: Pointer to argument list
  */
-void post_exec_hook(microrl_t* mrl, int res, int argc, const char* const* argv) {
+void post_exec_hook(microrl_t* mrl, int res, int argc, const char* const *argv) {
     MICROSH_UNUSED(argc);
 
 #if MICROSH_CFG_LOGGING_CMD_EXEC_RESULT
@@ -389,16 +390,16 @@ void post_exec_hook(microrl_t* mrl, int res, int argc, const char* const* argv) 
         mrl->out_fn(mrl, ": ");
 
         switch (exec_res) {
-        case microshEXEC_ERROR_UNK_CMD: {
-            mrl->out_fn(mrl, "Unknown command"MICRORL_CFG_END_LINE);
-            break;
-        }
-        case microshEXEC_ERROR_MAX_ARGS: {
-            mrl->out_fn(mrl, "Too many arguments"MICRORL_CFG_END_LINE);
-            break;
-        }
-        default:
-            break;
+            case microshEXEC_ERROR_UNK_CMD: {
+                mrl->out_fn(mrl, "Unknown command"MICRORL_CFG_END_LINE);
+                break;
+            }
+            case microshEXEC_ERROR_MAX_ARGS: {
+                mrl->out_fn(mrl, "Too many arguments"MICRORL_CFG_END_LINE);
+                break;
+            }
+            default:
+                break;
         }
     }
 #endif /* MICROSH_CFG_LOGGING_CMD_EXEC_RESULT */

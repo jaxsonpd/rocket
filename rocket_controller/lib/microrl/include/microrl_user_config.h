@@ -1,10 +1,10 @@
 /**
- * \file            microsh_user_config.h
- * \brief           MicroSH library user configurations
+ * \file            microrl_user_config_template.h
+ * \brief           MicroRL library user configurations
  */
 
 /*
- * Copyright (c) 2022 Dmitry KARASEV
+ * Copyright (c) 2021 Dmitry KARASEV
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,32 +18,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * This file is part of microSH - Shell for Embedded Systems library.
+ * This file is part of MicroRL - Micro Read Line library for small and embedded devices.
  *
- * Author:          Dmitry KARASEV <karasevsdmitry@yandex.ru>
- * Version:         2.0.0-dev
+ * Authors:         Dmitry KARASEV <karasevsdmitry@yandex.ru>
+ * Version:         2.4.2
  */
 
-#ifndef MICROSH_HDR_USER_CONFIG_H
-#define MICROSH_HDR_USER_CONFIG_H
+#ifndef MICRORL_HDR_USER_CONFIG_H
+#define MICRORL_HDR_USER_CONFIG_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif /* __cplusplus */
 
+/* Rename this file to "microrl_user_config.h" for your application */
+
 /*
- * Open "microsh_config.h" and copy & replace
+ * Open "microrl_config.h" and copy & replace
  * here settings you want to change values
  */
-#define MICROSH_CFG_NUM_OF_CMDS               4
-#define MICROSH_CFG_LOGGING_CMD_EXEC_RESULT   1
 
-#define MICROSH_CFG_CONSOLE_SESSIONS          1
-#define MICROSH_CFG_MAX_CREDENTIALS           2
-#define MICROSH_CFG_MAX_AUTH_ATTEMPTS         3
 
 #ifdef __cplusplus
 }
 #endif /* __cplusplus */
 
-#endif  /* MICROSH_HDR_USER_CONFIG_H */
+#endif  /* MICRORL_HDR_USER_CONFIG_H */

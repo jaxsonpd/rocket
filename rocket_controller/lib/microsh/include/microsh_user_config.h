@@ -1,10 +1,10 @@
 /**
- * \file            microrl_user_config_template.h
- * \brief           MicroRL library user configurations
+ * \file            microsh_user_config_template.h
+ * \brief           microSH user configurations file
  */
 
 /*
- * Copyright (c) 2021 Dmitry KARASEV
+ * Copyright (c) 2022 Dmitry KARASEV
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,29 +18,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * This file is part of MicroRL - Micro Read Line library for small and embedded devices.
+ * This file is part of microSH - Shell for Embedded Systems library.
  *
- * Authors:         Dmitry KARASEV <karasevsdmitry@yandex.ru>
- * Version:         2.4.2
+ * Author:          Dmitry KARASEV <karasevsdmitry@yandex.ru>
+ * Version:         2.0.0-dev
  */
 
 #ifndef MICRORL_HDR_USER_CONFIG_H
 #define MICRORL_HDR_USER_CONFIG_H
 
-#ifdef __cplusplus
-extern "C" {
-#endif /* __cplusplus */
-
-/* Rename this file to "microrl_user_config.h" for your application */
+/* Rename this file to "microsh_user_config.h" for your application */
 
 /*
- * Open "microrl_config.h" and copy & replace
- * here settings you want to change values
+ * Open "include/microsh/microsh_config.h" and
+ * copy & replace here settings you want to change values
  */
 
 
-#ifdef __cplusplus
-}
-#endif /* __cplusplus */
-
-#endif  /* MICRORL_HDR_USER_CONFIG_H */
+#endif /* MICRORL_HDR_USER_CONFIG_H */

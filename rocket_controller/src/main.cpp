@@ -1,22 +1,8 @@
 #include "stm32f103x6.h"  // CMSIS device header for STM32F103
 
-#include "USB.h"
-
-// #include "microsh.h"
-
-// static microsh_t sh;
-
-// static microsh_credentials_t credentials[1] = {
-//     {.login_type = 0x01, .username = "admin", .password = "Password!"}
-// };
+#include "microsh.h"
 
 void delay_ms(uint32_t ms);
-
-// int microrl_print(microrl_t* mrl, const char* str) {
-//     MICROSH_UNUSED(mrl);
-
-//     return 0;
-// }
 
 static void init_clock() {
     // Enable HSE
@@ -74,13 +60,11 @@ int main(void) {
     GPIOC->CRH &= ~(GPIO_CRH_MODE13 | GPIO_CRH_CNF13); // Clear mode and config
     GPIOC->CRH |= GPIO_CRH_MODE13_1;                   // Output mode, max 2 MHz
     delay_ms(500);
-    
-    USB_init();
 
     __enable_irq();
 
     while (1) {
-        // GPIOC->ODR ^= GPIO_ODR_ODR13;  // Toggle PC13
+        GPIOC->ODR ^= GPIO_ODR_ODR13;  // Toggle PC13
         delay_ms(500);
     }
 }
