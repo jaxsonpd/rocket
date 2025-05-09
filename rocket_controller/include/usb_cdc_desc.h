@@ -12,8 +12,11 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+
 #include <libopencm3/usb/usbd.h>
 #include <libopencm3/usb/cdc.h>
+
+#include "info.h"
 
 static const struct usb_device_descriptor dev = {
 	.bLength = USB_DT_DEVICE_SIZE,
@@ -152,9 +155,9 @@ static const struct usb_config_descriptor config = {
 #define NUM_USB_STRINGS 3
 
 static const char *usb_strings[] = {
-	"Black Sphere Technologies",
-	"CDC-ACM Demo",
-	"DEMO",
+	MANUFACTURER_STR,
+	PRODUCT_STR,
+	SERIAL_NUMBER,
 };
 
 

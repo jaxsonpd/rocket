@@ -50,8 +50,15 @@ int main(void)
 	for (i = 0; i < 0x800000; i++)
 		__asm__("nop");
 	gpio_clear(GPIOC, GPIO13);
+    char buf[12] = "Hello World";
+    
 
-	while (1)
+	while (1) {
         usb_cdc_poll();
-		
+        if (i > 800000) {
+            usb_cdc_write(buf, 12);
+            i = 0;
+        }
+        i++;
+    }
 }

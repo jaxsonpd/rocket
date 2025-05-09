@@ -113,3 +113,7 @@ void usb_cdc_add_rx_cb(CdcRxCB_t callback) {
 void usb_cdc_poll(void) {
     usbd_poll(usbd_device_cdc);
 }
+
+uint16_t usb_cdc_write(char *buf, uint16_t len) {
+    return usbd_ep_write_packet(usbd_device_cdc, 0x82, buf, len);
+} 

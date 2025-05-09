@@ -30,8 +30,6 @@
 
 #include <stdint.h>
 #include <stdbool.h>
-#include <libopencm3/usb/usbd.h>
-#include <libopencm3/usb/cdc.h>
 
 typedef void (*CdcRxCB_t)(char* buf, uint16_t len);
 
@@ -55,6 +53,15 @@ void usb_cdc_add_rx_cb(CdcRxCB_t callback);
  * 
  */
 void usb_cdc_poll(void);
+
+/** 
+ * @brief Write to the usb cdc interface
+ * @param buf the buffer to write
+ * @param len the length of the buffer
+ * 
+ * @return 0 if failed, len if successful
+ */
+uint16_t usb_cdc_write(char *buf, uint16_t len);
 
 
 #endif // USB_CDC_H
