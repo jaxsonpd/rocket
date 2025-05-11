@@ -64,4 +64,7 @@ void usb_cdc_poll(void);
 uint16_t usb_cdc_write(char *buf, uint16_t len);
 
 
+bool usb_cdc_ready(void);
+
+
 #endif // USB_CDC_H

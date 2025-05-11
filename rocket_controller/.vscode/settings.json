@@ -1,5 +1,13 @@
 {
     "files.associations": {
-        "usbd.h": "c"
+        "usbd.h": "c",
+        "cli.h": "c",
+        "microshell.h": "c",
+        "ush.h": "c",
+        "ush_types.h": "c",
+        "ush_preconfig.h": "c",
+        "ush_config_platform.h": "c",
+        "ush_config.h": "c",
+        "gpio.h": "c"
     }
 }

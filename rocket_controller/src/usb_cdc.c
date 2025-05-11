@@ -24,6 +24,8 @@ static usbd_device* usbd_device_cdc;
 
 static CdcRxCB_t rx_callback = NULL;
 
+bool usb_enabled = false;
+
 /**
  * @brief Process the control requests from the usb end point
  * @param usbd_dev the usb device
@@ -82,7 +84,9 @@ static void cdcacm_data_rx_cb(usbd_device* usbd_dev, uint8_t ep) {
         if (rx_callback != NULL) {
             rx_callback(buf, len);
         }
+
         usbd_ep_write_packet(usbd_dev, 0x82, buf, len);
+        // usbd_ep_write_packet(usbd_dev, 0x82, buf, len);
     }
 }
 
@@ -99,6 +103,8 @@ static void cdcacm_set_config(usbd_device* usbd_dev, uint16_t wValue) {
         USB_REQ_TYPE_CLASS | USB_REQ_TYPE_INTERFACE,
         USB_REQ_TYPE_TYPE | USB_REQ_TYPE_RECIPIENT,
         cdcacm_control_request);
+
+    usb_enabled = true;
 }
 
 int usb_cdc_init(void) {
@@ -117,3 +123,7 @@ void usb_cdc_poll(void) {
 uint16_t usb_cdc_write(char *buf, uint16_t len) {
     return usbd_ep_write_packet(usbd_device_cdc, 0x82, buf, len);
 } 
+
+bool usb_cdc_ready(void) {
+    return usb_enabled;
+}
