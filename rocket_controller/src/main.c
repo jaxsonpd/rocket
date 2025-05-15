@@ -28,7 +28,7 @@
 
 int main(void)
 {
-	int64_t i;
+	int64_t i = 0;
 
 	rcc_clock_setup_pll(&rcc_hse_configs[RCC_CLOCK_HSE8_72MHZ]);
 
@@ -45,15 +45,17 @@ int main(void)
 	gpio_clear(GPIOC, GPIO13);
 
     usb_cdc_send_strn("Welcome to Hermes 01\n\r", 21);
-    // cli_init();
+    
+    cli_init();
 
 
 
 	while (1) {
-        // cli_update();
+        cli_update();
         
         if (i > 800000) {
             gpio_toggle(GPIOC, GPIO13);
+            // usb_cdc_send_byte(usb_cdc_avail()+'0');
             // usb_cdc_send_strn("Hello World2", 13);
             // usb_cdc_write("hello World8\r\n", 14);
             // usb_cdc_write(buf, 12);
