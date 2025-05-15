@@ -40,28 +40,18 @@ typedef void (*CdcRxCB_t)(char* buf, uint16_t len);
  */
 int usb_cdc_init(void);
 
-/**
- * @brief Register an rx callback that is called whenever new data is recived on the
- * usb cdc rx endpoint
- * @param callback the rx callback
- * 
- */
-void usb_cdc_add_rx_cb(CdcRxCB_t callback);
-
 /** 
- * @brief Poll the cdc endpoint triggering interputs where needed.
+ * @brief Check if usb device is connected
  * 
+ * @return true if connected
  */
-void usb_cdc_poll(void);
+bool usb_cdc_connected(void);
 
-/** 
- * @brief Write to the usb cdc interface
- * @param buf the buffer to write
- * @param len the length of the buffer
- * 
- * @return 0 if failed, len if successful
- */
-uint16_t usb_cdc_write(char *buf, uint16_t len);
+uint16_t usb_cdc_avail(void);
+int usb_cdc_recv_byte(void);
+void usb_cdc_send_byte(uint8_t ch);
+void usb_cdc_send_strn(const char *str, size_t len);
+
 
 
 bool usb_cdc_ready(void);

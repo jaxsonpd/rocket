@@ -8,6 +8,9 @@
         "ush_preconfig.h": "c",
         "ush_config_platform.h": "c",
         "ush_config.h": "c",
-        "gpio.h": "c"
-    }
+        "gpio.h": "c",
+        "common.h": "c",
+        "cdc.h": "c"
+    },
+    "cmake.ignoreCMakeListsMissing": true
 }
