@@ -18,6 +18,7 @@
 #include "usb_cdc.h"
 
 // #define USH_CONFIG_CUSTOM_FILE "ush_config_platform.h"
+#define USH_CONFIG_PLATFORM_POSIX
 #include "microshell.h"
 
 #include "cli.h"
@@ -90,8 +91,134 @@ static const struct ush_file_descriptor root_files[] = {
     }
 };
 
+// toggle file execute callback
+static void toggle_exec_callback(struct ush_object *self, struct ush_file_descriptor const *file, int argc, char *argv[])
+{
+    // simple toggle led, without any arguments validation
+    gpio_toggle(GPIOC, GPIO13);
+}
+
+// reboot cmd file execute callback
+static void reboot_exec_callback(struct ush_object *self, struct ush_file_descriptor const *file, int argc, char *argv[])
+{
+#if defined(ARDUINO_ARCH_ESP32)
+    ESP.restart();
+#elif defined(ARDUINO_ARCH_AVR)
+    void (*reset)(void) = 0;
+    reset();
+#else
+    ush_print(self, "error: reboot not supported...");
+#endif
+}
+
+// set file execute callback
+static void set_exec_callback(struct ush_object *self, struct ush_file_descriptor const *file, int argc, char *argv[])
+{
+    // arguments count validation
+    if (argc != 2) {
+        // return predefined error message
+        ush_print_status(self, USH_STATUS_ERROR_COMMAND_WRONG_ARGUMENTS);
+        return;
+    }
+
+    // arguments validation
+    if (strcmp(argv[1], "1") == 0) {
+        // turn led on
+        gpio_set(GPIOC, GPIO13);
+    } else if (strcmp(argv[1], "0") == 0) {
+        // turn led off
+        gpio_clear(GPIOC, GPIO13);
+    } else {
+        // return predefined error message
+        ush_print_status(self, USH_STATUS_ERROR_COMMAND_WRONG_ARGUMENTS);
+        return;
+    }
+}
+
+// bin directory files descriptor
+static const struct ush_file_descriptor bin_files[] = {
+    {
+        .name = "toggle",                       // toggle file name
+        .description = "toggle led",            // optional file description
+        .help = "usage: toggle\r\n",            // optional help manual
+        .exec = toggle_exec_callback,           // optional execute callback
+    },
+    {
+        .name = "set",                          // set file name
+        .description = "set led",
+        .help = "usage: set {0,1}\r\n",
+        .exec = set_exec_callback
+    },
+};
+
+// led file get data callback
+size_t led_get_data_callback(struct ush_object *self, struct ush_file_descriptor const *file, uint8_t **data)
+{
+    // read current led state
+    bool state = gpio_get(GPIOC, GPIO13);
+    // return pointer to data
+    *data = (uint8_t*)((state) ? "1\r\n" : "0\r\n");
+    // return data size
+    return strlen((char*)(*data));
+}
+
+// led file set data callback
+void led_set_data_callback(struct ush_object *self, struct ush_file_descriptor const *file, uint8_t *data, size_t size)
+{
+    // data size validation
+    if (size < 1)
+        return;
+
+    // arguments validation
+    if (data[0] == '1') {
+        // turn led on
+        gpio_set(GPIOC, GPIO13);
+    } else if (data[0] == '0') {
+        // turn led off
+        gpio_clear(GPIOC, GPIO13);
+    }
+}
+
+// time file get data callback
+size_t time_get_data_callback(struct ush_object *self, struct ush_file_descriptor const *file, uint8_t **data)
+{
+    static char time_buf[16];
+    // read current time
+    long current_time = 11011;
+    // convert
+    snprintf(time_buf, sizeof(time_buf), "%ld\r\n", current_time);
+    time_buf[sizeof(time_buf) - 1] = 0;
+    // return pointer to data
+    *data = (uint8_t*)time_buf;
+    // return data size
+    return strlen((char*)(*data));
+}
+
+// dev directory files descriptor
+static const struct ush_file_descriptor dev_files[] = {
+    {
+        .name = "led",
+        .description = NULL,
+        .help = NULL,
+        .exec = NULL,
+        .get_data = led_get_data_callback,      // optional data getter callback
+        .set_data = led_set_data_callback,      // optional data setter callback
+    },
+    {
+        .name = "time",
+        .description = NULL,
+        .help = NULL,
+        .exec = NULL,
+        .get_data = time_get_data_callback,
+    },
+};
+
 // root directory handler
 static struct ush_node_object root;
+
+static struct ush_node_object bin;
+
+static struct ush_node_object dev;
 
 int cli_init(void) {
 
@@ -101,6 +228,9 @@ int cli_init(void) {
     // mount root directory (root must be first)
     ush_node_mount(&ush, "/", &root, root_files, sizeof(root_files) / sizeof(root_files[0]));
 
+    ush_node_mount(&ush, "/bin", &bin, bin_files, sizeof(bin_files) / sizeof(bin_files[0]));
+    
+    ush_node_mount(&ush, "/dev", &dev, dev_files, sizeof(dev_files) / sizeof(dev_files[0]));
     return 0;
 }
 

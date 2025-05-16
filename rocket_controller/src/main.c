@@ -54,7 +54,7 @@ int main(void)
         cli_update();
         
         if (i > 800000) {
-            gpio_toggle(GPIOC, GPIO13);
+            // gpio_toggle(GPIOC, GPIO13);
             // usb_cdc_send_byte(usb_cdc_avail()+'0');
             // usb_cdc_send_strn("Hello World2", 13);
             // usb_cdc_write("hello World8\r\n", 14);
