@@ -622,6 +622,14 @@
     [
       "674ce274-a968-4810-ae0c-ac178eb8f24c",
       "USB"
+    ],
+    [
+      "f399c6cb-3e26-487d-b9cf-c74b6d16daa0",
+      "Sensors"
+    ],
+    [
+      "c44788ff-ad93-43d9-96fb-0e9bd32d8c57",
+      "Memory"
     ]
   ],
   "text_variables": {}
