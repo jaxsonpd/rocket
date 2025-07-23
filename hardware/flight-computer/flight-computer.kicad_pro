@@ -483,6 +483,12 @@
       ],
       "/USB/USB_P": [
         "USB"
+      ],
+      "/USB_N": [
+        "USB"
+      ],
+      "/USB_P": [
+        "USB"
       ]
     },
     "netclass_patterns": []
@@ -630,6 +636,10 @@
     [
       "c44788ff-ad93-43d9-96fb-0e9bd32d8c57",
       "Memory"
+    ],
+    [
+      "0f07516f-4fd1-47d6-b491-c9a86c3c13fb",
+      "Pryo"
     ]
   ],
   "text_variables": {}

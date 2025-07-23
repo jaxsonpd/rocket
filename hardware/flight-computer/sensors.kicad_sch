@@ -1549,7 +1549,7 @@
 		)
 		(uuid "20abd4ac-0ba4-4c05-907d-862246d4bb9c")
 	)
-	(text "Altitude & Temp"
+	(text "ALTITUDE & TEMPERATURE"
 		(exclude_from_sim no)
 		(at 104.394 30.734 0)
 		(effects
@@ -1568,6 +1568,27 @@
 			)
 		)
 		(uuid "6ae3863a-ae0a-4e40-8ca7-5e72b2a1104a")
+	)
+	(text_box "Accelerometer acts as a master for compass."
+		(exclude_from_sim no)
+		(at 151.13 139.7 0)
+		(size 25.4 6.35)
+		(margins 0.9525 0.9525 0.9525 0.9525)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type color)
+			(color 255 255 194 1)
+		)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "825d649b-e533-46e1-9cea-3c4ffd501cd7")
 	)
 	(junction
 		(at 107.95 39.37)
@@ -2321,225 +2342,115 @@
 		)
 		(uuid "fe084b01-5f01-41ba-9975-3c8b6e01eb64")
 	)
-	(global_label "MCU_SDA1"
-		(shape bidirectional)
-		(at 170.18 64.77 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "1b11230b-cf8d-486e-a96e-7f89940248c6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 156.2864 64.77 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MCU_SCL1"
+	(hierarchical_label "MAG_SCL"
 		(shape input)
 		(at 168.91 134.62 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "2a957d92-6797-4072-8fed-9e472f4906c6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 156.1882 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "31bfbaaa-8256-4f08-bb0f-9caf2d0e5979")
 	)
-	(global_label "MCU_SCL1"
-		(shape output)
+	(hierarchical_label "MAG_SCL"
+		(shape input)
 		(at 170.18 67.31 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "381ac718-f1ab-43b9-bcc9-f10b056e6631")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 157.4582 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "76970134-eaec-4763-a708-b54795b61a95")
 	)
-	(global_label "MCU_SDO1"
-		(shape input)
-		(at 170.18 72.39 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "3f12f6be-1ab9-40c9-b936-686f5175dbe9")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 157.1558 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MCU_SCL2"
-		(shape input)
-		(at 87.63 67.31 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "513caecc-a7db-4100-a1aa-6882abcc83e7")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 74.9082 67.31 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MCU_SCK1"
-		(shape input)
-		(at 170.18 74.93 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "56d109de-b18f-490b-86c6-d23780cb0a6a")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 157.2163 74.93 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MCU_SDA1"
-		(shape bidirectional)
-		(at 168.91 137.16 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "5c5bcf6c-56a9-48bf-b3e2-0f32f2eb7c33")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 155.0164 137.16 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MCU_SDI1"
-		(shape output)
-		(at 170.18 62.23 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "6b9ac1c3-aaa9-4da0-a629-70bd36667c58")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 157.8815 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MCU_SDA2"
+	(hierarchical_label "BAR_SDA"
 		(shape bidirectional)
 		(at 87.63 62.23 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "6d1a1d5f-fe6d-4136-98ea-c88cb4ad44a6")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 73.7364 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
+		(uuid "7b478f10-ba43-4dff-9abe-3aa4ffd7d01e")
 	)
-	(global_label "IMU_CS"
+	(hierarchical_label "IMU_CS"
 		(shape input)
 		(at 152.4 77.47 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify right)
 		)
-		(uuid "c5b1750f-5441-41a0-b762-e2fd0c5fdeff")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 142.581 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
+		(uuid "8fff63e3-7c66-4e23-8357-45efdf43e8ef")
+	)
+	(hierarchical_label "MCU_SCK"
+		(shape input)
+		(at 170.18 74.93 180)
+		(effects
+			(font
+				(size 1.27 1.27)
 			)
+			(justify right)
 		)
+		(uuid "94572c3f-2ab1-4c9e-a0bd-d4e40cb6a818")
+	)
+	(hierarchical_label "MAG_SDA"
+		(shape input)
+		(at 168.91 137.16 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a2e9272c-43b0-4a9e-bb65-9a985eecdfdd")
+	)
+	(hierarchical_label "MCU_SDI"
+		(shape output)
+		(at 170.18 62.23 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "b90439b3-22f8-47ec-91ec-595cbf819e50")
+	)
+	(hierarchical_label "MAG_SDA"
+		(shape input)
+		(at 170.18 64.77 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d222fd3d-3e6e-4048-9c3b-8ccbe94a3370")
+	)
+	(hierarchical_label "BAR_SCL"
+		(shape input)
+		(at 87.63 67.31 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "dd8e408d-3a25-42c8-9b4a-36bbbdf9c2e5")
+	)
+	(hierarchical_label "MCU_SDO"
+		(shape input)
+		(at 170.18 72.39 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e71abee7-d1bc-41e8-a14f-59cb75f9209e")
 	)
 	(symbol
 		(lib_id "power:GND")

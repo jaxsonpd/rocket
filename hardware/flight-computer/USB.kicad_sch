@@ -1694,7 +1694,7 @@
 			(fill
 				(type none)
 			)
-			(uuid 1f13ac64-ad06-4fae-aa75-cf4d562efc44)
+			(uuid 2df5ca95-0281-4d91-a79f-e676f859e320)
 		)
 	)
 	(netclass_flag ""
@@ -1793,10 +1793,10 @@
 			)
 		)
 		(pin "2"
-			(uuid "93b0bc75-8a5a-4694-a0a3-d556aa00a522")
+			(uuid "91fcd1bb-924c-4d99-98b2-e0a62fa155d9")
 		)
 		(pin "1"
-			(uuid "48717e24-208f-4adb-9401-9716760267da")
+			(uuid "fafe346b-c021-4189-9ce2-36bfb71ceaa2")
 		)
 		(instances
 			(project "flight-computer"
@@ -1872,10 +1872,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "8d0119c4-6fa1-46e6-b755-d38391a10b8b")
+			(uuid "51efb0c5-711d-4737-b9cf-d8871d13029f")
 		)
 		(pin "2"
-			(uuid "fd19ebb6-a841-4582-88dd-eca5669bc0bc")
+			(uuid "b0e4bee4-5582-4388-9097-0ffd625b9fdd")
 		)
 		(instances
 			(project "flight-computer"
@@ -1941,7 +1941,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "d2eb859a-5dd7-454a-912a-0d81a556b04c")
+			(uuid "3357ca27-a27a-4113-b6f9-871ec81d6158")
 		)
 		(instances
 			(project "flight-computer"
@@ -2007,7 +2007,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "3b063cb5-64f0-4467-89cd-4c308dfc3437")
+			(uuid "3c962662-eb2a-4c21-a72c-2b59371c67a1")
 		)
 		(instances
 			(project "flight-computer"
@@ -2073,7 +2073,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "74f671a8-a633-40d8-98cd-f9c31b4b93dc")
+			(uuid "4b0e53d8-b8e1-4cd9-b33d-4aefdb2e1168")
 		)
 		(instances
 			(project "flight-computer"
@@ -2148,10 +2148,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "7638963b-d67e-4e08-ac09-03dc85e902c4")
+			(uuid "5189cabe-ecc6-4086-8310-51ba5d52e312")
 		)
 		(pin "2"
-			(uuid "6af9d3ca-064d-4753-afec-9675163c2ce3")
+			(uuid "b5203cdc-57dc-4d8b-9820-34c8853f7232")
 		)
 		(instances
 			(project "flight-computer"
@@ -2226,10 +2226,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "31dab967-cd11-41a6-b2ef-e6c7e7a22667")
+			(uuid "96da8750-5f5c-445b-af21-7061244a9f61")
 		)
 		(pin "2"
-			(uuid "0ebda6d5-2726-4f59-8dee-37913b674a65")
+			(uuid "7eded831-8742-4f87-aae7-6fc47c33bf5b")
 		)
 		(instances
 			(project "flight-computer"
@@ -2304,55 +2304,55 @@
 			)
 		)
 		(pin "A12"
-			(uuid "57b9fe04-32eb-4201-ac47-1476ba57c996")
+			(uuid "29b24b6e-1eb8-48fe-9f48-44b27d418260")
 		)
 		(pin "A7"
-			(uuid "b5cc40e5-c749-4707-a988-fa5a49108604")
+			(uuid "42c81ffe-26c8-432d-a17c-fae4dd9b4e22")
 		)
 		(pin "B1"
-			(uuid "3a84c360-e9ab-4f3e-9259-43aca51d0570")
+			(uuid "426b3ac4-72ed-440f-a623-a9a03a11a0a3")
 		)
 		(pin "B4"
-			(uuid "2d074bcd-93a8-4c98-aaf2-710ae3418110")
+			(uuid "3bbdcfec-962b-42fd-a56c-f8c4411baeec")
 		)
 		(pin "B9"
-			(uuid "7e7fba0c-3060-4f3c-a36e-e4cb8661bc4c")
+			(uuid "a82bcfee-388f-44fe-a5f5-3fc4223f1936")
 		)
 		(pin "B5"
-			(uuid "9d6a907e-2fd7-4a4c-a3dc-ebbe4cc70f02")
+			(uuid "a21502db-9a88-4fb4-8aea-10271303c902")
 		)
 		(pin "A8"
-			(uuid "a8b64b1e-4543-429f-988e-89e244e857e2")
+			(uuid "5e038288-4147-46d5-8d39-531318940228")
 		)
 		(pin "A9"
-			(uuid "aef117ed-c522-4ebb-b3bf-b2f54c7ae03a")
+			(uuid "21f91237-51fe-4079-a436-62d0731116ae")
 		)
 		(pin "B6"
-			(uuid "d344f4a6-62ff-461b-99aa-e92eb7441ea2")
+			(uuid "652d02be-d2f1-4927-a361-0647b759f53a")
 		)
 		(pin "B8"
-			(uuid "f6ead9c7-7fb9-424e-b12a-18a3b2c9bb79")
+			(uuid "4218c941-2ea5-4e11-8b26-549053a9e198")
 		)
 		(pin "S1"
-			(uuid "b4d03c17-ad9c-4e59-9b39-ce890dd4eab7")
+			(uuid "57b1102f-34c7-4080-86c8-d94701cbe779")
 		)
 		(pin "B7"
-			(uuid "1c0ab403-7ab4-4110-8cc1-b76efd550900")
+			(uuid "afd7fa4d-d8d8-440d-97de-4d0473eb3987")
 		)
 		(pin "B12"
-			(uuid "c87ba800-afb8-4095-803f-b29b02ba3e21")
+			(uuid "ed2bc0e3-18a0-4b04-81db-243d97f35dea")
 		)
 		(pin "A6"
-			(uuid "3ab6432a-5c92-41b5-9b13-da9687aa1ce7")
+			(uuid "1ea45f7e-99f6-4dc7-acd6-6294322b5a0e")
 		)
 		(pin "A1"
-			(uuid "0dc553d5-374f-467e-9e88-c720e497a13b")
+			(uuid "521d3b56-fc6e-4762-87cd-79b58e26c5a3")
 		)
 		(pin "A5"
-			(uuid "025f1140-a5d7-49c7-bfa0-14622691bdf0")
+			(uuid "098f9020-db1b-4401-8a5e-53ca1ef61e34")
 		)
 		(pin "A4"
-			(uuid "c7ce0e6b-7b73-43d7-b3ea-a54874ee3e2e")
+			(uuid "f2721a57-63f9-4565-9e13-129b8c9b3b85")
 		)
 		(instances
 			(project "flight-computer"
@@ -2417,7 +2417,7 @@
 			)
 		)
 		(pin "1"
-			(uuid "6e2cd25c-515b-431b-b67f-b6c04a082c45")
+			(uuid "6b67209f-6dba-4fdd-a90d-556bc7f545aa")
 		)
 		(instances
 			(project "flight-computer"
@@ -2490,10 +2490,10 @@
 			)
 		)
 		(pin "1"
-			(uuid "6b6249cd-29ad-4e1f-b72c-b76b28688e44")
+			(uuid "85434b86-ca22-40d8-b7bb-d824125fbd28")
 		)
 		(pin "2"
-			(uuid "de5ce7fb-aa84-4cbf-bbf8-5790d5f7f25b")
+			(uuid "83f47860-109c-446f-906f-f929b369b982")
 		)
 		(instances
 			(project "flight-computer"

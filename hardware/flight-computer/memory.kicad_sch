@@ -969,7 +969,7 @@
 		)
 		(uuid "dd6a6740-9608-458c-bd26-7ed1f8479c83")
 	)
-	(hierarchical_label "SDI"
+	(hierarchical_label "MCU_SDI"
 		(shape output)
 		(at 106.68 106.68 180)
 		(effects
@@ -980,7 +980,7 @@
 		)
 		(uuid "3e19d213-93f7-4285-b64e-400c76b36a1a")
 	)
-	(hierarchical_label "SDO"
+	(hierarchical_label "MCU_SDO"
 		(shape input)
 		(at 106.68 104.14 180)
 		(effects
@@ -991,7 +991,7 @@
 		)
 		(uuid "605cd069-4be9-4990-bcae-2923ff66fd22")
 	)
-	(hierarchical_label "SCK"
+	(hierarchical_label "MCU_SCK"
 		(shape input)
 		(at 106.68 101.6 180)
 		(effects
